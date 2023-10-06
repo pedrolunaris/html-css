@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de listas em HTML</title>
+</head>
+<body>
+    <h1>Trabalhando com listas</h1>
+    <h2>Listas ordenadas</h2>
+    <p>Listas ordenadas, como o nome já diz, são organizadas em uma ordem progressiva (1, 2, 3... ou a, b, c..., por exemplo). Se você acrescentar um item entre outros depois da lista estar feita, a ordenação vai se organizar automaticamente.</p>
+    <p>Uma <strong>lista ordenada</strong> é criada usando a tag <code>&lt;ol&gt;&lt;/ol&gt;</code> - que significa <em>ordered list</em>. Essa tag vai envelopar a sua lista. Cada item da lista, por sua vez, precisa ser colocado com uma tag <code>&lt;li&gt;</code>. Cada item pode ser "fechado" com <code>&lt;/li&gt;</code>, mas isso é opcional.</p>
+    <p>As listas ordenadas serão organizadas por padrão em 1, 2, 3... Você pode acrescentar um parâmetro <code>type</code> para especificar outra forma de ordenação. <code>type="1"</code> é a ordenação padrão. <code>type="A"</code> ordena em A, B, C... (maiúsculas), enquanto <code>type="a"</code> ordena em a, b, c... (minúsculas). <code>type="I"</code> ordena em números romanos em maiúsculo, ou seja, I, II, III... Por último, <code>type="i"</code> ordena em números romanos em minúsculo, i, ii, iii...</p>
+    <h3>Exemplos</h3>
+    <ol>
+        <li>Acessar a playlist do Curso em Vídeo</li>
+        <li>Localizar o vídeo em que se está</li>
+        <li>Abrir o VS Code</li>
+        <li>Praticar o código mostrado no vídeo</li>
+    </ol>
+    <ol type="A">
+        <li>Organizar as vasilhas que vão ser usadas</li>
+        <li>Organizar os ingredientes a sua vista</li>
+        <li>Misturar os ingredientes secos</li>
+        <li>Acrescentar os ingredientes líquidos e misturar</li>
+        <li>Pré-aquecer o forno</li>
+        <li>Colocar a mistura em uma fôrma</li>
+        <li>Colocar no forno</li>
+    </ol>
+    <h2>Listas não-ordenadas</h2>
+    <p>Como o nome indica, <strong>listas não-ordenadas</strong> são listas em que a ordem não importa, ou não representa uma sequência lógica. Ela é criada usando a tag <code>&lt;ul&gt;</code> - que significa <em>unordered list</em>. Dentro do envelope desta tag, cada item é colocado da mesma forma que as listas ordenadas: usamos <code>&lt;li&gt;</code> antes de cada item, podendo fechar com <code>&lt;/li&gt;</code>.
+    </p>
+    <p>As listas não-ordenadas tem algumas opções de formato. Usando o parâmetro <code>type</code>, você pode definir:</p>
+    <ul>
+        <li><code>type="disc"</code></li>
+        <li><code>type="circle"</code></li>
+        <li><code>type="square"</code></li>
+    </ul>
+    <p>Essas três formatações são padrões para diferentes níveis (veja o próximo subtítulo, <em>Listas misturadas</em>). Quando você cria uma lista não-ordenada simples, o padrão será o <em>disc</em>. Quando você cria uma lista não-ordenada dentro de um ítem de uma lista "mãe" (seja ela ordenada ou não-ordenada), o padrão dos seus ítens será o <em>cicrle</em>. Um terceiro nível de "sublista" (uma lista não-ordenada dentro de um item de uma "lista mãe" que está dentro de uma "lista avó") terá como padrão o <em>square</em>.</p>
+    <p>As listas não-ordenadas são muito usadas para criar menus.</p>
+    <h2>Listas misturadas</h2>
+    <p>Você pode aninhar uma nova lista dentro de um item de uma lista "mãe". Para fazer isso, basta acrescentar a tag escolhida no lugar que estaria um item da lista (<code>&lt;li&gt;</code>). Desta forma:</p>
+    <pre>
+        <code>
+            &lt;h3&gt;Compras:&lt;/h3&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Mercado&lt;/li&gt;
+                &lt;ul type="square"&gt;
+                    &lt;li&gt;Pão&lt;/li&gt;
+                    &lt;li&gt;Tomate&lt;/li&gt;
+                    &lt;li&gt;Alface&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;li&gt;Ferragem&lt;/li&gt;
+                &lt;ul type="square"&gt;
+                    &lt;li&gt;Parafusos&lt;/li&gt;
+                    &lt;li&gt;Buchas&lt;/li&gt;
+                    &lt;li&gt;Broca&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/ol&gt;
+        </code>
+    </pre>
+    <p>Esse código ficaria assim no navegador:</p>
+    <!--Gostaria de deixar o próximo trecho afastado do alinhamento esquerdo como um <blockquote>.-->
+    <h3>Compras:</h3>
+    <ol>
+        <li>Mercado</li>
+        <ul type="square">
+            <li>Pão</li>
+            <li>Tomate</li>
+            <li>Alface</li>
+        </ul>
+        <li>Ferragem</li>
+        <ul type="square">
+            <li>Parafusos</li>
+            <li>Buchas</li>
+            <li>Broca</li>
+        </ul>
+    </ol>
+    <h2>Listas de definições</h2>
+    <p>Esse tipo de lista é utilizado quando se quer descrever termos e sua definição - como em um glossário, por exemplo. Ela organiza os termos e desloca a descrição um pouco para a direita (o que pode ser customizado com CSS).</p>
+    <p>Para criar uma <strong>lista de definições</strong>, você utiliza a tag <code>&lt;dl&gt;</code> - que significa <em>definition list</em> - da mesma forma que <code>&lt;ol&gt;</code> e <code>&lt;ul&gt;</code> nas listas ordenadas e não-ordenadas. Ao invés de <code>&lt;li&gt;</code>, no entanto, você vai usar para cada item: <code>&lt;dt&gt;</code> para o termo a ser definido - que significa <em>definition term</em> - e, na próxima linha, <code>&lt;dd&gt;</code> - que significa <em>definition description</em>. Por exemplo:</p>
+    <pre>
+        <code>
+            &lt;h3&gt;Pequeno dicionário de insultos elegantes&lt;/h3&gt;
+            &lt;dl&gt;
+                &lt;dt&gt;Onagro&lt;/dt&gt;
+                &lt;dd&gt;Burro.&lt;/dd&gt;
+                &lt;dt&gt;Mentecapto&lt;/dt&gt;
+                &lt;dd&gt;Louco, idiota.&lt;/dd&gt;
+                &lt;dt&gt;Sevandija&lt;/dt&gt;
+                &lt;dd&gt;Quem vive à custa dos outros.&lt;/dd&gt;
+            &lt;/dl&gt;
+            &lt;em&gt;Milanesi, Luís. Dicionário Brasilero de Insultos. 2002, Ateliê Editiorial.&lt;/em&gt;
+        </code>
+    </pre>
+    <p>O código acima fica assim no navegador:</p>
+    <h3>Pequeno dicionário de insultos elegantes</h3>
+    <dl>
+        <dt>Onagro</dt>
+        <dd>Burro.</dd>
+        <dt>Mentecapto</dt>
+        <dd>Louco, idiota.</dd>
+        <dt>Sevandija</dt>
+        <dd>Quem vive à custa dos outros.</dd>
+    </dl>
+    <em>Milanesi, Luís. Dicionário Brasilero de Insultos. 2002, Ateliê Editiorial.</em>
+</body>
+</html>

@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+body {
+    padding: 7%;
+}
+
+h1 {
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 36px;
+    color: rgb(0, 0, 175);
+    text-align: center;
+    margin-bottom: 24;
+}
+
+h2 {
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 24;
+    color: rgb(0, 0, 125);
+    border-bottom-style: solid;
+    border-color: black;
+}
+
+h3 {
+    margin-left: 5%;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 20px;
+    color: rgb(0, 0, 125);
+}
+
+p {
+    margin-left: 5%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 14px;
+    color: rgb(40, 40, 40);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 560px;
+    border-radius: 25px;
+    border: 4px solid rgb(0, 0, 125);
+  }
+
+blockquote {
+    margin-left: 12%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+}
+
+.video {
+    padding-top: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 560px;
+    height: 315px;
+}
+
+.videodesc {
+    margin-left: 0%;
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+
+  .gallerypic {
+    max-width: 400px;
+    width: 18%;
+  }

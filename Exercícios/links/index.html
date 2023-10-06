@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links em HTML</title>
+</head>
+<body>
+    <h1>Links em HTML</h1>
+    <h2>Usando links externos</h2>
+    <p>Os links podem ser considerados a base da internet. Em HTML, eles são chamados de <em>âncoras</em>. Para criar um link externo (que leva a algum outro site), basta envelopar uma expressão na tag <code>&lt;a&gt;</code>. Existe um parâmetro praticamente orbigatório que é a <code>href</code> - que significa <em>hypertext reference</em>. É nesse parâmetro que vai a URL (o endereço) do link externo. Por exemplo:</p>
+    <p><code>&lt;a href="http://talitapagani.com/paginas-acessiveis/exemplos/links/&gt;Este é um exemplo de link&lt;a&gt;</code></p>
+    <p>Esse exemplo aparece no seu navegador assim:</p>
+    <p><a href="http://talitapagani.com/paginas-acessiveis/exemplos/links/">Este é um exemplo de link</a></p>
+    <p>Neste exemplo, o link criado vai ser aberto na mesma aba que se está navegando. Quando você está criando um site, caso queira que o usuário permaneça nesse site, pode ser uma boa ideia que os links sejam abertos em uma nova aba ou janela. Para isso, usa-se o parâmetro <code>target="_blank"</code>,que vai indicar que o link seja aberto em uma aba nova (vazia = blank). O comportamento padrão da tag <code>&lt;a&gt;</code>, de abrir um link na mesma janela ou aba, é o mesmo do que colocar <code>target="_self"</code>.</p> 
+    <p>Outro parâmetro recomendado de ser usado é o <code>rel</code> - que vem de <em>relationship</em>. Esse parâmetro indica para o navegador qual é a relação (relationship) entre o link e a página onde se está. No caso de um link externo, o valor atribuído a esse parâmetro é <code>external</code>. Por exemplo:</p>
+    <p><code>&lt;a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank" rel="external"&gt;Definição e uso da tag &lt;a&gt; em HTML&lt;/a&gt;</code></p>
+    <p>No navegador, esse código vai aparecer assim:</p>
+    <p><a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank" rel="external">Definição e uso da tag &lt;a&gt; em HTML</a></p>
+    <h2>Usando links internos</h2>
+    <p>Links internos fazem relações com outras páginas do nosso próprio servidor. Para isso, ao invés de uma URL, a tag &lt;a&gt; funciona com um caminho, ou seja, o endereço da onde está esta página no servidor.</p>
+    <p>No parâmetro <code>rel</code>, não existe o valor <em>internal</em> para links locais (como existe o <em>external</em> para os links externos). Valores que podem ser usados em links internos e que ajudam os sistemas de busca a entender a navegação do seu site são: <code>rel="next"</code>, que se refere as próximas páginas, ou seja, aquelas que sua página atual vão dar acesso; e <code>rel="prev"</code>, de <em>previous</em>, anterior, que se refere a página da onde se chegou na página atual.</p>
+    <p>Existem outros valores que podem ser colocados no atributo <code>rel</code>. Por exemplo, quando você vai colocar um link para uma página externa que você não endossa (como no caso de um link pago, que você não quer se comprometer com o conteúdo do link), usa-se <code>rel="nofollow"</code>. Esse valor diz especificamente para o mecanismo de busca do Google não indexar esse site no processo de indexação do seu.</p> 
+    <p>Outras opções de valores para <code>rel</code> podem ser encontradas <a href="https://www.w3schools.com/tags/att_a_rel.asp" rel="external">aqui</a>.</p>
+    <h2>Links para download</h2>
+    <p>Os links para download de arquivos funcionam exatamente como os links internos. Ao invés de colocar o caminho para uma página dentro do seu servidor, você colocará o caminho para um arquivo.</p>
+    <p>Dependendo do formato do arquivo, é possível que o seu navegador não baixe ele imediatamente. Ao invés disso, ele vai abrir o arquivo em uma aba. Isso acontece com arquivos PDF, por exemplo. Você pode tentar forçar o download utilizando dois parâmetros.</p>
+    <p>O primeiro deles é <code>download</code>. Este parâmetro vai dizer para o navegador que é para baixar o arquivo. Ele pode ser usado sem nenhum valor. Se você especificar um valor para ele, esse valor vai ser o novo nome do arquivo assim que ele for baixado. Por exemplo: <code>&lt;a href="meusite/exemplodearquivo.zip" download="arquivo.zip"&gt;Baixar arquivo&lt;/a&gt;</code></p>
+    <p>Outro parâmetro que pode ser usado é o <code>type</code>. Com ele, você especifica o tipo de mídia (<em>media_type</em>) do arquivo. Cada tpo de arquivo tem um <em>media type</em> diferente. Você pode consultar <a href="http://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external">esta página</a> para verificar isso.</p>
+    <!--Os vídeos que trazem o conteúdo dessa página são o 27, 28 e 29-->
+</body>
+</html>

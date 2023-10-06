@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem Dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/onepiece-300.jpg" type="image/jpg">
+        <source media="(max-width: 1050px)" srcset="imagens/onepiece-700.jpg" type="image/jpg">
+        <source media="(max-width: 1550px)" srcset="imagens/onepiece-1000.jpg" type="image/jpg">
+        <img src="imagens/onepiece-1500.jpg" alt="Personagens do grupo de Piratas do Chapéu de Palha do anime One Piece posicionados em círculo, vistos de baixo como em uma foto de grupo, com o céu azul com poucas núvens no fundo">
+    </picture>
+
+    <p>Essa funcionalidade de <strong>imagem dinâmica</strong>, que utiliza apenas HTML5, é feita utilizando a tag <code>&lt;picture&gt;</code>. Essa tag vai envelopar duas outras tags: <code>&lt;img&gt;</code>, que vai conter a imagem original e que necessariamente vai ser a última coisa antes de <code>&lt;/picture&gt;</code>, ou seja, do fechamento da tag. E <code>&lt;source&gt;</code>, que vai apresentar opções de imagens de diferentes tamanhos e que vão substituir a imagem original (a que está colocada na tag <code>&lt;img&gt;</code>) de acordo com as regras que vamos criar.</p>
+    <!--linkar a página sobre <img>-->
+    <h2>Como funciona a tag &lt;source&gt;</h2>
+    <p><code>&lt;source&gt;</code> trabalha com três parâmetros (atributos):</p>
+    <ul>
+        <li><code>media</code></li>
+        <li><code>srcset</code></li>
+        <li><code>type</code></li>
+    </ul>
+    <p>O parâmetro <code>media</code> vai definir quando a imagem é que mais se aplica. Como valor desse parâmetro, podemos usar <code>min-width</code> - indicando que deve ser essa imagem aplicada caso a tela tenha no mínimo a largura (<em>width</em>) listada. Ou seja, se colocarmos <code>&lt;source media="(min-width: 300px)&gt;"</code>, isso vai significar que, para telas de 300px para mais, essa imagem é aplicável.</p>
+    <p>Também podemos usar <code>max-width</code>, que tem o efeito inverso. Ou seja, para telas que tenham do tamanho listado <em>para baixo</em>, essa imagem será aplicável. Se usarmos <code>&lt;source media="(max-width: 700px)&gt;"</code>, a imagem será aplicável em telas de 700px <em>para baixo</em>.</p>
+    <p>O parâmetro <code>srcset</code> vai indicar a imagem alternativa que deve ser aplicada pela regra criada em <code>media</code>. Nos exemplos acima, essa vai ser a imagem que vai entrar no lugar da imagem original caso:</p>
+    <ul>
+        <li>a tela tiver 300px ou mais (primeiro exemplo)</li>
+        <li>a tela tiver 700px ou menos (segundo exemplo)</li>
+    </ul>
+    <p>Por fim, o parâmetro <code>type</code> vai indicar o tipo de mídia (<em>media_type</em>) que estamos usando em <code>&lt;source&gt;</code>. Falamos sobre <em>media types</em> na parte sobre links para download de arquivos. <!--incluir link para essa parte--> Você pode encontrar uma lista de todos os <em>media types</em> <a href="http://www.iana.org/assignments/media-types/media-types.xhtml" rel="external">aqui</a>.</p>
+    <p>A tag <code>source</code> vai funcionar a partir de um leitura de cima para baixo. Por isso, ela vai ter uma ordenação correta, que, se não for cumprida, vai fazer com que as imagens não se tornem dinâmicas da forma desejada. Essa ordenação depende se você escolher utilizar <code>min-width</code> ou <code>max-width</code>.</p>
+    <p>Para o caso de <code>max-width</code>, a primeira colocação de <code>source</code> deve ser a que se refere ao <strong>menor tamanho máximo de tela</strong>. Se vamos criar opções para telas de no máximo 768px, 1280px, e uma terceira sem limites, a primeira linha dentro da tag <code>picture</code> vai ser a seguinte:</p>
+    <p><code>&lt;source media="(max-width: 768px)" srcset="caminho/da/imagem.file" type="image/file"&gt;</code></p>
+    <p>Seguindo esse exemplo, a segunda linha vai listar o <code>max-width</code> como 1280px e a terceira e última linha vai ter a tag <code>img</code> que traz o arquivo de imagem original.</p>
+    <p>A lógica por traz disso é que o navegador vai checar o tamanho máximo da tela (apontado pelo <code>max-width</code>) do menor para o maior. Se o tamanho máximo for até 768px, ele vai escolher a imagem do primeiro <code>source</code>. Se for maior ele vai para a próxima linha. Se for entre 768px e 1280px, ele escolherá a segunda imagem (contida na segunda linha de <code>source</code>). E se o tamanho máximo da tela for maior do que 1280px, ele vai escolher o arquivo de imagem original.</p>
+    <p>Já no caso da escolha ser por <code>min-width</code>, a ordem é inversa. A primeira linha de <code>source</code> deverá apontar o <strong>maior tamanho mínimo de tela</strong>. A segunda instância de <code>source</code> apontará o segundo maior tamanho mínimo de tela. E assim sucessivamente.</p>
+    <p>Mas, em ambos os casos, a imagem original, trazida pela tag <code>img</code>, deverá ser a última linha dentro da tag <code>picture</code>.</p>
+    <p>Uma boa dica é acrescentar 50px no tamanho de cada tela em relação ao tamanho de cada imagem (pelo menos ao utilizarmos <code>max-width</code>). Ou seja, se você usar uma imagem de 1000px de largura e quiser que ela seja aplicada para telas que tenham como máximo de largura 1000px, coloque o <code>source</code> referente a essa imagem como tendo <code>media="(max-width: 1050px)"</code>. Isso vai fazer com que o navegador não chegue a carregar a barra de rolagem horizontal antes de trocar para a próxima opção de imagem.</p>
+</body>
+</html>
