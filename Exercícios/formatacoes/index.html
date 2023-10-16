@@ -8,83 +8,133 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>As formatações em HTML5</h1>
-    <h2>Introdução</h2>
-    <p>O HTML5 trouxe uma mudança de lógica em relação ao HTML4. Antes dele, as tags usadas para formatar um texto eram muitas vezes baseadas em formato, ou seja, em como ia ficar esse conteúdo na página. Para colocar um <em>itálico</em>, por exemplo, a tag usada era <code>&lt;i&gt;</code>. Com o desenvolvimento das <abbr title="Cascading Style Sheets">CSS</abbr>, a formatação das páginas ficou muito mais poderosa. Isso talvez tenha liberado as tags em <abbr title="HyperText Markup Language">HTML</abbr> para serem mais lógicas, um modelo chamado de <em>semântico</em>. Isso significa que as tags passam a representar mudanças de conteúdo, ou seja, de significado, de sentido. No HTML5, o que chamamos de itálico não é entendido apenas do ponto de vista da forma, mas sim do seu significado: ele é um <em>destaque</em>. Assim, como veremos a seguir, a tag atualmente usada é <code>&lt;em&gt;</code>, que vem do inglês <em>emphasis</em>, ou seja, <em>ênfase</em>.</p>
-    <img src="https://media.makeameme.org/created/inovao-vem-pra.jpg" alt="Meme que mostra um grupo de pessoas rindo com as palavras INOVAÇÃO - VEM PRA K..KKKKKKKKKK">
-    <h2>Principais formatações</h2>
-    <img src="https://preview.redd.it/dycoj5ndi4hb1.jpg?width=663&auto=webp&s=a61400c4e84389bc810bc807a3578cd4ab8f2a05" alt="Meme de vilão da animação Os Incríveis dizendo Se todo o documento inteiro está em negrito, nada está em negrito">
-    <h3>Negrito / Destaque</h3>
-    <p>A <strong>forma semântica de dar destaque</strong> é usando a tag <code>&lt;strong&gt;</code>.</p>
-    <h3>Itálico / Ênfase</h3>
-    <p>A <em>forma semântica de dar ênfase</em> é usando a tag <code>&lt;em&gt;</code>.</p>
-    <h3>Texto marcado</h3>
-    <p>Para <mark>um texto tipo marca-texto</mark>, usamos a tag <code>&lt;mark&gt;</code>.</p>
-    <h3>Texto pequeno</h3>
-    <p>Para usar as famosas <small>letras miúdas</small>, usamos a tag <code>&lt;small&gt;</code>. No HTML5, não existe tag para um texto grande. Isso se faz com CSS.</p>
-    <img src="https://i.pinimg.com/736x/53/bd/d6/53bdd6e2727c5d4a3bb445edf36185e4.jpg" alt="Foto de cartaz desenhado que diz, em letras grandes, Casa comigo?, e, logo antes em letras pequenas, Limpa a">
-    <h3>Texto deletado</h3>
-    <p>Para <del>riscar um texto</del>, dando o significado que é para ele ser desconsiderado do sentido final, usamos a tag <code>&lt;del&gt;</code>.</p>
-    <h3>Texto inserido</h3>
-    <p>Já o sublinhado é considerado <ins>um texto inserido</ins>, como se houvesse um espaço em que foi acrescentado um texto depois. A tag a ser usada é <code>&lt;ins&gt;</code>.</p>
-    <h3>Texto sobrescrito</h3>
-    <p>É utilizado para as colocar caracteres ou palavras menores e mais acima das restantes, como no caso de notações matemáticas: 10<sup>2</sup>. Usamos a tag <code>&lt;sup&gt;</code> pra isso.</p>
-    <h3>Texto subscrito</h3>
-    <p>É utilizado para colocar caracteres ou palavras menores e mais abaixo que as demais, como no caso de notações químicas: H<sub>2</sub>0. Para isso, usamos a tag <code>&lt;sub&gt;</code>.</p>
-    <h2>Outras formatações</h2>
-    <img src="https://img.ifunny.co/images/414d868724b9b43ebdb962b746d76864cb4ef1279c8e2b4fd63de2c85b86b3f8_1.jpg" alt="Meme com montagem de trecho de filme que brinca com parecer saber fazer algo só olhando vídeos no YouTube">
-    <h3>Código-fonte e Pré-formatação</h3>
-    <p>Para dar mais legibilidade a um texto de código, como por exemplo (de um código em C) <code>printf("ciphertext: ");</code>, usamos a tag <code>&lt;code&gt;</code>.</p>
-    <p>No entanto, quando queremos citar códigos que tenham identação, a tag <code>&lt;code&gt;</code> não vai ser suficiente, já que ela ignora qualquer identação e coloca tudo na mesma linha. Uma forma de lidar com isso é envelopar tudo o que estiver já envelopado por <code>&lt;code&gt;</code> em uma tag <code>&lt;pre&gt;</code>. Ela vai fazer com que todo espaço ou troca de linha no código seja levado para o navegador. Por exemplo (de um código em C):</p>
-    <pre>
-        <code>
-            // Iterates through message
-            for (int i = 0; i < strlen(plaintext); i++)
-            {
-                // Checks if uppercase letter and changes it by key
-                if (isupper(plaintext[i]))
-                {
-                    char p = plaintext[i] - 'A';
-                    char c = (p + key) % 26;
-                    // printf("%i\n", ciphertext[i]);
-                    ciphertext[i] = c + 'A';
-                    // printf("%i\n", ciphertext[i]);
-                }
-            }
-        </code>
-    </pre>
-    <h2>Citações</h2>
-    <p>Para citar algum texto ou alguém, usamos a tag <code>&lt;q&gt;</code>, que vem de <em>quote</em>, ou seja, citação. Por exemplo: <q>É difícil lidar com gente burra.</q> <em>(Clarice Lispector ou Mário Quintana)</em>.</p>
-    <img src="https://celsobessa.com.br/wp-content/uploads/2013/08/clarice-lispector-1-atirei-o-pau-no-gato.jpg" alt="Meme com uma foto de Clarice Lispector e texto de parte da música Atirei o Pão no Gato, como se fosse uma frase da escritora">
-    <p>Tudo o que essa tag faz, a princípio, é colocar entre áspas. Por que não simplesmente digitar as áspas, então? Acredito que tenha a ver com a declaração dessa parte como citação. Assim, se vamos mudar o estilo das citações em uma página, podemos usar CSS para alterar todas as inserções da tag <code>&lt;q&gt;</code>.</p>
-    <p>Já para fazer uma citação em bloco, usamos a tag <code>&lt;blockquote&gt;</code>. Nela, podemos usar um parâmetro <em>cite</em> para indicar o link da fonte - o que não vai aparecer no navegador, mas vai auxiliar os mecanismos de busca e a parte interna do site a entender da onde vem a citação. Por exemplo: <code>&lt;blockquote cite="www.exemplodesite.com/qualquercoisa"&gt;&lt;blockquote&gt;</code>. Ficaria assim:</p>
-    <blockquote cite="https://www.google.com.br/books/edition/Assim_falou_Zaratustra/_CJHDwAAQBAJ?hl=pt-BR&gbpv=1&dq=nietzsche+zaratustra&printsec=frontcover">
-        1. Aos trinta anos de idade, Zaratustra deixou sua pátria e o lago de sua pátria e foi para as montanhas. Ali gozou do seu espírito e da sua solidão, e durante dez anos não se cansou. Mas enfim seu coração mudou - e um dia ele se levantou com a aurora, foi para diante do sol e assim lhe falou:
-        "Ó grande astro! Que seria de tua felicidade, se não tivesses aqueles que iluminas?" <em>"Assim falou Zaratustra", Friedrich Nietzsche</em>
-    </blockquote>
-    <h2>Abreviações</h2>
-    <p>Para indicar que alguma parte do texto é uma abreviação ou sigla, e permitir que o significado da sigla (ou abreviação) seja acessado por um texto em popup que aparece quando o cursor é colocado em cima da abreviação, usamos a tag <code>&lt;abbr&gt;</code> com o parâmetro <code>title</code> seguido por um <code>="texto que indica o significado"</code>. Por exemplo, <abbr title="HyperText Markup Language">HTML</abbr>.</p>
-    <h2>Texto invertido</h2>
-    <p>Talvez a tag mais inútil de todo HTML (quer dizer, vai saber), para inverter o sentido de um texto basta usar a tag <code>&lt;bdo&gt;</code> com o parâmetro <code>dir="rtl"</code> (que significa <em>"direction right-to-left"</em>). Por exemplo, para escrever <em>"tag inútil"</em> de forma invertida, fica assim: <strong><bdo dir="rtl">tag inútil</bdo></strong>.</p>
-    <h2>Referência</h2>
-    <p>O conteúdo dessa página foi retirado dos vídeos abaixo:</p>
-    
-    <iframe class="video" src="https://www.youtube.com/embed/T-d_hsO3hUI?si=BQest2-8jhAFvXJu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <p class="videodesc"><em>Vídeo nº22 - Módulo 1 - Curso de HTML e CSS</em></p>
-    
-    <iframe class="video" src="https://www.youtube.com/embed/8TgKFYkcO5Y?si=5t-pgbNxWLsnsFL3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-    <p class="videodesc"><em>Vídeo nº23 - Módulo 1 - Curso de HTML e CSS</em></p>
+    <main id="main">
+        <h1>As formatações em HTML5</h1>
+        <h2>Introdução</h2>
+        <p>
+            O HTML5 trouxe uma mudança de lógica em relação ao HTML4. Antes dele, as tags usadas para formatar um texto eram muitas vezes baseadas em formato, ou seja, em como ia ficar esse conteúdo na página. Para colocar um <em>itálico</em>, por exemplo, a tag usada era <code>&lt;i&gt;</code>. Com o desenvolvimento das <abbr title="Cascading Style Sheets">CSS</abbr>, a formatação das páginas ficou muito mais poderosa. Isso talvez tenha liberado as tags em <abbr title="HyperText Markup Language">HTML</abbr> para serem mais lógicas, um modelo chamado de <em>semântico</em>. Isso significa que as tags passam a representar mudanças de conteúdo, ou seja, de significado, de sentido. No HTML5, o que chamamos de itálico não é entendido apenas do ponto de vista da forma, mas sim do seu significado: ele é um <em>destaque</em>. Assim, como veremos a seguir, a tag atualmente usada é <code>&lt;em&gt;</code>, que vem do inglês <em>emphasis</em>, ou seja, <em>ênfase</em>.
+        </p>
+        <img src="https://media.makeameme.org/created/inovao-vem-pra.jpg" alt="Meme que mostra um grupo de pessoas rindo com as palavras INOVAÇÃO - VEM PRA K..KKKKKKKKKK">
+        <h2>Principais formatações</h2>
+        <img src="https://preview.redd.it/dycoj5ndi4hb1.jpg?width=663&auto=webp&s=a61400c4e84389bc810bc807a3578cd4ab8f2a05" alt="Meme de vilão da animação Os Incríveis dizendo Se todo o documento inteiro está em negrito, nada está em negrito">
+        <h3>Negrito / Destaque</h3>
+        <p>
+            A <strong>forma semântica de dar destaque</strong> é usando a tag <code>&lt;strong&gt;</code>.
+        </p>
+        <h3>Itálico / Ênfase</h3>
+        <p>
+            A <em>forma semântica de dar ênfase</em> é usando a tag <code>&lt;em&gt;</code>.
+        </p>
+        <h3>Texto marcado</h3>
+        <p>
+            Para <mark>um texto tipo marca-texto</mark>, usamos a tag <code>&lt;mark&gt;</code>.
+        </p>
+        <h3>Texto pequeno</h3>
+        <p>
+            Para usar as famosas <small>letras miúdas</small>, usamos a tag <code>&lt;small&gt;</code>. No HTML5, não existe tag para um texto grande. Isso se faz com CSS.
+        </p>
+        <img src="https://i.pinimg.com/736x/53/bd/d6/53bdd6e2727c5d4a3bb445edf36185e4.jpg" alt="Foto de cartaz desenhado que diz, em letras grandes, Casa comigo?, e, logo antes em letras pequenas, Limpa a">
+        <h3>Texto deletado</h3>
+        <p>
+            Para <del>riscar um texto</del>, dando o significado que é para ele ser desconsiderado do sentido final, usamos a tag <code>&lt;del&gt;</code>.
+        </p>
+        <h3>Texto inserido</h3>
+        <p>
+            Já o sublinhado é considerado <ins>um texto inserido</ins>, como se houvesse um espaço em que foi acrescentado um texto depois. A tag a ser usada é <code>&lt;ins&gt;</code>.
+        </p>
+        <h3>Texto sobrescrito</h3>
+        <p>
+            É utilizado para as colocar caracteres ou palavras menores e mais acima das restantes, como no caso de notações matemáticas: 10<sup>2</sup>. Usamos a tag <code>&lt;sup&gt;</code> pra isso.
+        </p>
+        <h3>Texto subscrito</h3>
+        <p>
+            É utilizado para colocar caracteres ou palavras menores e mais abaixo que as demais, como no caso de notações químicas: H<sub>2</sub>0. Para isso, usamos a tag <code>&lt;sub&gt;</code>.
+        </p>
+        <h2>Outras formatações</h2>
+        <img src="https://img.ifunny.co/images/414d868724b9b43ebdb962b746d76864cb4ef1279c8e2b4fd63de2c85b86b3f8_1.jpg" alt="Meme com montagem de trecho de filme que brinca com parecer saber fazer algo só olhando vídeos no YouTube">
+        <h3>Código-fonte e Pré-formatação</h3>
+        <p>
+            Para dar mais legibilidade a um texto de código, como por exemplo (de um código em C) <code>printf("ciphertext: ");</code>, usamos a tag <code>&lt;code&gt;</code>.
+        </p>
+        <p>
+            No entanto, quando queremos citar códigos que tenham identação, a tag <code>&lt;code&gt;</code> não vai ser suficiente, já que ela ignora qualquer identação e coloca tudo na mesma linha. Uma forma de lidar com isso é envelopar tudo o que estiver já envelopado por <code>&lt;code&gt;</code> em uma tag <code>&lt;pre&gt;</code>. Ela vai fazer com que todo espaço ou troca de linha no código seja levado para o navegador. Por exemplo (de um código em C):
+        </p>
+        <!-- <div class="pre">
+            <pre>
+                <code class="pre">
+                    // Iterates through message
+                    for (int i = 0; i < strlen(plaintext); i++)
+                    {
+                        // Checks if uppercase letter and changes it by key
+                        if (isupper(plaintext[i]))
+                        {
+                            char p = plaintext[i] - 'A';
+                            char c = (p + key) % 26;
+                            // printf("%i\n", ciphertext[i]);
+                            ciphertext[i] = c + 'A';
+                            // printf("%i\n", ciphertext[i]);
+                        }
+                    }
+                </code>
+            </pre>
+        </div> -->
+        <h2>Citações</h2>
+        <p>
+            Para citar algum texto ou alguém, usamos a tag <code>&lt;q&gt;</code>, que vem de <em>quote</em>, ou seja, citação. Por exemplo: <q>É difícil lidar com gente burra.</q> <em>(Clarice Lispector ou Mário Quintana)</em>.
+        </p>
+        <img src="https://celsobessa.com.br/wp-content/uploads/2013/08/clarice-lispector-1-atirei-o-pau-no-gato.jpg" alt="Meme com uma foto de Clarice Lispector e texto de parte da música Atirei o Pão no Gato, como se fosse uma frase da escritora">
+        <p>
+            Tudo o que essa tag faz, a princípio, é colocar entre áspas. Por que não simplesmente digitar as áspas, então? Acredito que tenha a ver com a declaração dessa parte como citação. Assim, se vamos mudar o estilo das citações em uma página, podemos usar CSS para alterar todas as inserções da tag <code>&lt;q&gt;</code>.
+        </p>
+        <p>
+            Já para fazer uma citação em bloco, usamos a tag <code>&lt;blockquote&gt;</code>. Nela, podemos usar um parâmetro <em>cite</em> para indicar o link da fonte - o que não vai aparecer no navegador, mas vai auxiliar os mecanismos de busca e a parte interna do site a entender da onde vem a citação. Por exemplo: <code>&lt;blockquote cite="www.exemplodesite.com/qualquercoisa"&gt;&lt;blockquote&gt;</code>. Ficaria assim:
+        </p>
+        <blockquote cite="https://www.google.com.br/books/edition/Assim_falou_Zaratustra/_CJHDwAAQBAJ?hl=pt-BR&gbpv=1&dq=nietzsche+zaratustra&printsec=frontcover">
+            1. Aos trinta anos de idade, Zaratustra deixou sua pátria e o lago de sua pátria e foi para as montanhas. Ali gozou do seu espírito e da sua solidão, e durante dez anos não se cansou. Mas enfim seu coração mudou - e um dia ele se levantou com a aurora, foi para diante do sol e assim lhe falou:
+            "Ó grande astro! Que seria de tua felicidade, se não tivesses aqueles que iluminas?" <em>"Assim falou Zaratustra", Friedrich Nietzsche</em>
+        </blockquote>
+        <h2>Abreviações</h2>
+        <p>
+            Para indicar que alguma parte do texto é uma abreviação ou sigla, e permitir que o significado da sigla (ou abreviação) seja acessado por um texto em popup que aparece quando o cursor é colocado em cima da abreviação, usamos a tag <code>&lt;abbr&gt;</code> com o parâmetro <code>title</code> seguido por um <code>="texto que indica o significado"</code>. Por exemplo, <abbr title="HyperText Markup Language">HTML</abbr>.
+        </p>
+        <h2>Texto invertido</h2>
+        <p>
+            Talvez a tag mais inútil de todo HTML (quer dizer, vai saber), para inverter o sentido de um texto basta usar a tag <code>&lt;bdo&gt;</code> com o parâmetro <code>dir="rtl"</code> (que significa <em>"direction right-to-left"</em>). Por exemplo, para escrever <em>"tag inútil"</em> de forma invertida, fica assim: <strong><bdo dir="rtl">tag inútil</bdo></strong>.
+        </p>
+        <h2>Referência</h2>
+        <p>
+            O conteúdo dessa página foi retirado dos vídeos abaixo:
+        </p>
+        
+        <div class="video-emb">
+            <iframe class="video" src="https://www.youtube.com/embed/T-d_hsO3hUI?si=BQest2-8jhAFvXJu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="videodesc">
+            <em>Vídeo nº22 - Módulo 1 - Curso de HTML e CSS</em>
+        </p>
+        
+        <div class="video-emb">
+            <iframe class="video" src="https://www.youtube.com/embed/8TgKFYkcO5Y?si=5t-pgbNxWLsnsFL3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="videodesc">
+            <em>Vídeo nº23 - Módulo 1 - Curso de HTML e CSS</em>
+        </p>
 
-    <iframe class="video" src="https://www.youtube.com/embed/4ynvsrkamt8?si=l8x_DyBZ-246e75G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <p class="videodesc"><em>Vídeo nº24 - Módulo 1 - Curso de HTML e CSS</em></p>
-    
-    <h2>Imagens usadas nessa página:</h2>
-    <div class="gallery">
-        <img class="gallerypic" src="https://media.makeameme.org/created/inovao-vem-pra.jpg" alt="Meme que mostra um grupo de pessoas rindo com as palavras INOVAÇÃO - VEM PRA K..KKKKKKKKKK">
-        <img class="gallerypic" src="https://preview.redd.it/dycoj5ndi4hb1.jpg?width=663&auto=webp&s=a61400c4e84389bc810bc807a3578cd4ab8f2a05" alt="Meme de vilão da animação Os Incríveis dizendo Se todo o documento inteiro está em negrito, nada está em negrito">
-        <img class="gallerypic" src="https://i.pinimg.com/736x/53/bd/d6/53bdd6e2727c5d4a3bb445edf36185e4.jpg" alt="Foto de cartaz desenhado que diz, em letras grandes, Casa comigo?, e, logo antes em letras pequenas, Limpa a">
-        <img class="gallerypic" src="https://img.ifunny.co/images/414d868724b9b43ebdb962b746d76864cb4ef1279c8e2b4fd63de2c85b86b3f8_1.jpg" alt="Meme com montagem de trecho de filme que brinca com parecer saber fazer algo só olhando vídeos no YouTube">
-        <img class="gallerypic" src="https://celsobessa.com.br/wp-content/uploads/2013/08/clarice-lispector-1-atirei-o-pau-no-gato.jpg" alt="Meme com uma foto de Clarice Lispector e texto de parte da música Atirei o Pão no Gato, como se fosse uma frase da escritora">
-    </div>
+        <div class="video-emb">
+            <iframe class="video" src="https://www.youtube.com/embed/4ynvsrkamt8?si=l8x_DyBZ-246e75G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="videodesc">
+            <em>Vídeo nº24 - Módulo 1 - Curso de HTML e CSS</em>
+        </p>
+        
+        <h2>Imagens usadas nessa página:</h2>
+        <div class="gallery">
+            <img class="gallerypic" src="https://media.makeameme.org/created/inovao-vem-pra.jpg" alt="Meme que mostra um grupo de pessoas rindo com as palavras INOVAÇÃO - VEM PRA K..KKKKKKKKKK">
+            <img class="gallerypic" src="https://preview.redd.it/dycoj5ndi4hb1.jpg?width=663&auto=webp&s=a61400c4e84389bc810bc807a3578cd4ab8f2a05" alt="Meme de vilão da animação Os Incríveis dizendo Se todo o documento inteiro está em negrito, nada está em negrito">
+            <img class="gallerypic" src="https://i.pinimg.com/736x/53/bd/d6/53bdd6e2727c5d4a3bb445edf36185e4.jpg" alt="Foto de cartaz desenhado que diz, em letras grandes, Casa comigo?, e, logo antes em letras pequenas, Limpa a">
+            <img class="gallerypic" src="https://img.ifunny.co/images/414d868724b9b43ebdb962b746d76864cb4ef1279c8e2b4fd63de2c85b86b3f8_1.jpg" alt="Meme com montagem de trecho de filme que brinca com parecer saber fazer algo só olhando vídeos no YouTube">
+            <img class="gallerypic" src="https://celsobessa.com.br/wp-content/uploads/2013/08/clarice-lispector-1-atirei-o-pau-no-gato.jpg" alt="Meme com uma foto de Clarice Lispector e texto de parte da música Atirei o Pão no Gato, como se fosse uma frase da escritora">
+        </div>
+    </main>
 </body>
 </html>
